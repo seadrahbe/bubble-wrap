@@ -14,11 +14,13 @@ int main() {
 
     while(true) {
 
-      if (bn::keypad::a_pressed()) {
+      bn::backdrop::set_color(bn::color(28, 10, 17));
+
+      if (bn::keypad::a_held()) {
         bn::backdrop::set_color(bn::color(5, 5, 5));
       }
 
-      if (bn::keypad::b_pressed()) {
+      if (bn::keypad::b_held()) {
           bn::backdrop::set_color(bn::color(20, 0, 3));
       }
 
