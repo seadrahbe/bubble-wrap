@@ -39,9 +39,23 @@ int main() {
     // Vector to hold sprites
     bn::vector<bn::sprite_ptr, 10> circles = {};
 
+    int y = -40;
+    int count = 0;
+
     for(int x = -40; x <= 40; x += 10) {
       BN_LOG("x value", x);
-      circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
+
+      int c = x - 10;
+      if (count == 2) {
+          circles.push_back(bn::sprite_items::dot.create_sprite(c, y));
+          count = 0;
+      } else {
+          circles.push_back(bn::sprite_items::dot.create_sprite(x, y));
+      }
+      
+      y += 10;
+      count++;
+
     }
 
     if (bn::keypad::a_pressed()) {
