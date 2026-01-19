@@ -44,6 +44,7 @@ int main() {
 
     for(int x = -40; x <= 40; x += 10) {
       BN_LOG("x value", x);
+      count++;
 
       int c = x - 10;
       if (count == 2) {
@@ -52,9 +53,8 @@ int main() {
       } else {
           circles.push_back(bn::sprite_items::dot.create_sprite(x, y));
       }
-      
+
       y += 10;
-      count++;
 
     }
 
