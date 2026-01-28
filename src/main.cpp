@@ -39,6 +39,9 @@ int main() {
     // Vector to hold sprites
     bn::vector<bn::sprite_ptr, 10> circles = {};
 
+    // Vector for affine matts error
+    // bn::vector<bn::sprite_ptr, 41> circlesTest = {};
+
     int y = -40;
     int count = 0;
 
@@ -57,6 +60,47 @@ int main() {
       y += 10;
 
     }
+
+    // Affine mats error example
+
+    // for(int x = -40; x <= 40; x += 2) {
+    //   BN_LOG("x value", x);
+    //   count++;
+
+    //   int c = x - 2;
+    //   if (count == 2) {
+    //       circlesTest.push_back(bn::sprite_items::dot.create_sprite(c, y));
+    //       count = 0;
+    //   } else {
+    //       circlesTest.push_back(bn::sprite_items::dot.create_sprite(x, y));
+    //   }
+
+    //   y += 2;
+
+    // }
+
+    // Affine mats error
+    // for(int x = 0; x < 40; x++){
+    //   circlesTest[x].set_scale(0.1);
+    // }
+
+    // Set testing
+    circles[0].set_scale(1.8);
+    circles[0].set_horizontal_scale(1.7);
+    circles[1].set_scale(0.4);
+    circles[1].set_vertical_scale(1.7);
+    circles[2].set_scale(.8);
+    circles[2].set_mosaic_enabled(true);
+    circles[3].set_scale(2.0);
+    circles[3].set_shear(1.3);
+    circles[4].set_scale(0.6);
+    circles[4].set_vertical_flip(2.4);
+    circles[5].set_blending_enabled(true);
+    circles[6].set_visible(false);
+    circles[7].set_top_left_x(20);
+    circles[8].set_horizontal_shear(2.3);
+
+    
 
     if (bn::keypad::a_pressed()) {
       bn::backdrop::set_color(bn::color(5, 5, 5));
