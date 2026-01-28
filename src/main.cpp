@@ -91,6 +91,7 @@ int main() {
     circles[1].set_vertical_scale(1.7);
     circles[2].set_scale(.8);
     circles[2].set_mosaic_enabled(true);
+    circles[2].set_shear(1.3);
     circles[3].set_scale(2.0);
     circles[3].set_shear(1.3);
     circles[4].set_scale(0.6);
@@ -100,7 +101,7 @@ int main() {
     circles[7].set_top_left_x(20);
     circles[8].set_horizontal_shear(2.3);
 
-    
+
 
     if (bn::keypad::a_pressed()) {
       bn::backdrop::set_color(bn::color(5, 5, 5));
@@ -113,10 +114,12 @@ int main() {
 
       if (bn::keypad::a_held()) {
         bn::backdrop::set_color(bn::color(5, 5, 5));
+        circles[3].set_shear(1.3);
       }
 
       if (bn::keypad::b_held()) {
           bn::backdrop::set_color(bn::color(20, 0, 3));
+          circles[5].set_shear(1.3);
       }
 
       bn::core::update();
